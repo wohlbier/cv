@@ -50,10 +50,10 @@
 
 % can makebox also be used?
 \newcommand\headerview{
-
-    \center \name \\[0.05cm]
+  \begin{center}
+    \name \\[0.05cm]
     \contact % address \ mobile \\ mail
-
+  \end{center}
 }
 
 %profilpicture
