@@ -89,16 +89,16 @@
 % Covverletterview
 
 \newcommand\coverletter[1]{
-\\  \coverlettersubview
+\coverlettersubview
 \section{} \vspace{1ex}
 \textbf{ Dear \@contactperson, \\[0.1cm]}
-  #1
+  {#1}
 }
 
 \newcommand\coverlettersubview{
 \begin{tabular}{>{\scshape \bfseries \color{\@themecolor}}l  >{\small }l}
-Company: & \@companyname \\
-Position: & \@claimedposition \\
+Organization: & \@companyname \\
+Position: & \@claimedposition
 \end{tabular}
 }
 
