@@ -1,11 +1,28 @@
 \documentclass{muratcan_cv}
+
+\makeatletter
+% New setter, same pattern as \setgithubaccount
+\newcommand*{\setscholaraccount}[1]{\def\@scholaraccount{#1}}
+\newcommand{\scholarview}{\href{\@scholaraccount}{\faGraduationCap\ \footnotesize google scholar}}
+
+% Same as the class's \contact, plus Scholar (shown only if you set it)
+\renewcommand{\contact}{%
+  {\small \@address \cps \@mobile \\ \@mail%
+   \\%
+   \linkedinview \cps \githubview
+   \ifdefined\@scholaraccount \cps \scholarview\fi \\
+  }%
+}
+\makeatother
+
 \setname{John}{Wohlbier, PhD}
 \setaddress{Pittsburgh, PA USA}
 \setmobile{(505) 412-0128}
 \setmail{jgwohlbier@sei.cmu.edu}
-\setposition{Senior Research Scientist} %ignored for now
+\setposition{Principal Research Scientist} %ignored for now
 \setlinkedinaccount{https://www.linkedin.com/in/john-wohlbier-52a6b5a1/}
 \setgithubaccount{https://github.com/wohlbier}
+\setscholaraccount{https://scholar.google.com/citations?user=wohlbier&hl=en}
 \setthemecolor{red}
 
 \begin{document}
@@ -38,9 +55,10 @@ Domain Specific System on Chip,
 Data Protection in Virtual Environments,
 and
 Machine Learning and Optimization-guided Compilers for Heterogeneous
-Architectures
-programs. His current focus is on
-hardware-software co-design for for AI applications at the edge and
+Architectures programs.
+His current focus is on applications of AI to DoD HPC science codes on
+modern HPC architectures,
+hardware-software co-design for for AI applications at the edge, and
 applications of modern compiler technology to SOSA-aligned
 hardware. His interests include computation on modern and emerging
 hardware, performance engineering, and computational physics.
@@ -79,8 +97,10 @@ hardware, performance engineering, and computational physics.
 \vspace{1ex}
 \explanationdetail{Advanced computing and performance engineering for
   data intensive workloads including machine learning, artificial
-  intelligence, and graph analytics. Principal Investigator for CMU
-  SEI participation in DARPA
+  intelligence, computational science, and graph analytics.
+  AI agent driven optimization and porting of DoD HPC codes to modern
+  architectures.
+  Principal Investigator for CMU SEI participation in DARPA
   Software Defined Hardware,
   Domain Specific System on Chip,
   Data Protection in Virtual Environments,
@@ -94,8 +114,8 @@ hardware, performance engineering, and computational physics.
   applications for Spiral AI/ML project with long term goal of
   autogeneration of performant code for AI/ML workloads. Serve on CMU
   SEI Technology Council. Evaluate software research proposals from
-  across CMU SEI. Assist ETC scientists with proposal development and
-  curation.}
+  across CMU SEI. Assist AI-Division scientists with proposal
+  development and curation.}
 
 \vspace{1ex}
 \datedexperience{Engility Corporation}{2016 -- 2018}
@@ -216,7 +236,7 @@ hardware, performance engineering, and computational physics.
 
 % Programs
 \section{Program Development}
-\datedexperience{DARPA ERI}{June, 2020}
+\datedexperience{DARPA}{June, 2020 to present}
 \explanation{Principal Investigator}
 \vspace{1ex}
 \explanationdetail{Proposed performer system evaluation and
@@ -228,7 +248,9 @@ hardware, performance engineering, and computational physics.
   \href{https://www.darpa.mil/news-events/2020-03-02}{Data Protection
     in Virtual Environments},
   and
-  \href{https://www.darpa.mil/research/programs/mocha-machine-learning}{MOCHA}
+  \href{https://www.darpa.mil/research/programs/mocha-machine-learning}{Machine
+    learning and Optimization-guided Compliers for Heterogeneous
+    Architectures (MOCHA)}
   programs.
   Awards: \$5.3M base, additional \$2.5M optional.}
 \explanationdetail{Proposed and lead SEI managed, congressional line
@@ -236,7 +258,8 @@ hardware, performance engineering, and computational physics.
   \href{https://www.sei.cmu.edu/library/rr24-co-design-for-edge-artificial-intelligence/}{Hardware-Software
     Co-design for Edge AI Applications},
   and
-  \href{}{MOCHA Compiler Applications to SOSA Hardware}.
+  \href{https://www.sei.cmu.edu/blog/choosing-the-hardware-that-will-put-darpa-mochas-compilers-to-the-test/}{MOCHA
+    Compiler Applications to SOSA Hardware}.
   Awards: \$6.5M
   }
 
@@ -285,6 +308,7 @@ hardware, performance engineering, and computational physics.
     C \cpshalf
     C++  \cpshalf
     Fortran \cpshalf
+    MLIR \cpshalf
     LLVM IR \cpshalf
     Python}}
 %
