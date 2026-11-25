@@ -5,9 +5,11 @@
 \newcommand*{\setscholaraccount}[1]{\def\@scholaraccount{#1}}
 \newcommand{\scholarview}{\href{\@scholaraccount}{\faGraduationCap\ \footnotesize google scholar}}
 
-% Same as the class's \contact, plus Scholar (shown only if you set it)
+% Class's \contact, with phone and Scholar optional
 \renewcommand{\contact}{%
-  {\small \@address \cps \@mobile \\ \@mail%
+  {\small \@address
+   \ifdefined\@mobile \cps \@mobile\fi
+   \\ \@mail%
    \\%
    \linkedinview \cps \githubview
    \ifdefined\@scholaraccount \cps \scholarview\fi \\
@@ -17,12 +19,11 @@
 
 \setname{John}{Wohlbier, PhD}
 \setaddress{Pittsburgh, PA USA}
-\setmobile{(505) 412-0128}
-\setmail{jgwohlbier@sei.cmu.edu}
+\setmail{johnwohlbier@gmail.com}
 \setposition{Principal Research Scientist} %ignored for now
 \setlinkedinaccount{https://www.linkedin.com/in/john-wohlbier-52a6b5a1/}
 \setgithubaccount{https://github.com/wohlbier}
-\setscholaraccount{https://scholar.google.com/citations?user=wohlbier&hl=en&user=__J0P-YAAAAJ}
+\setscholaraccount{https://scholar.google.com/citations?user=__J0P-YAAAAJ&hl=en}
 \setthemecolor{red}
 
 \begin{document}
